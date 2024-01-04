@@ -1,0 +1,10 @@
+spring:
+  datasource:
+    driver-class-name: oracle.jdbc.OracleDriver
+    username: tao
+    password: bsoft123
+    url: jdbc:oracle:thin:@localhost:46333:XE
+  sql:
+    init:
+      schema-locations: classpath:db/oracle.sql
+      #mode: always

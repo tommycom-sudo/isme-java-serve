@@ -5,7 +5,8 @@
     <select id="findRolesByUserId" resultType="cn.dhbin.isme.pms.domain.entity.Role">
         select *
         from role r
-        where r.id in (select urr.roleId from user_roles_role urr where urr.userId = #{userId});
+        where r.id in (select urr.roleId from user_roles_role urr where urr.userId = #{userId})
+
     </select>
 
 </mapper>

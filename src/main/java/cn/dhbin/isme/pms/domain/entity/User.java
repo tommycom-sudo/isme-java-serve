@@ -14,7 +14,7 @@ import lombok.Data;
  * @author dhb
  */
 @Data
-@TableName("`user`")
+@TableName("\"USER\"")
 public class User implements Convert {
 
     @TableId(type = IdType.AUTO)

@@ -45,12 +45,12 @@ public class Permission implements Convert {
 
     private String description;
 
-    @TableField("`show`")
+    @TableField("show")
     private Boolean show;
 
     private Boolean enable;
 
-    @TableField("`order`")
+    @TableField("\"order\"")
     private Integer order;
 
 }
