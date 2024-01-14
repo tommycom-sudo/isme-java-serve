@@ -1,6 +1,6 @@
 spring:
   profiles:
-    active: oracle
+    active: mssql
 server:
   port: 8085
 sa-token:

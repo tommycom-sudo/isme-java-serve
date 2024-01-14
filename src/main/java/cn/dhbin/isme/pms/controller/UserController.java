@@ -11,12 +11,7 @@ import cn.dhbin.isme.common.response.Page;
 import cn.dhbin.isme.common.response.R;
 import cn.dhbin.isme.pms.domain.dto.UserDetailDto;
 import cn.dhbin.isme.pms.domain.dto.UserPageDto;
-import cn.dhbin.isme.pms.domain.request.AddUserRolesRequest;
-import cn.dhbin.isme.pms.domain.request.RegisterUserRequest;
-import cn.dhbin.isme.pms.domain.request.UpdatePasswordRequest;
-import cn.dhbin.isme.pms.domain.request.UpdateProfileRequest;
-import cn.dhbin.isme.pms.domain.request.UpdateUserRequest;
-import cn.dhbin.isme.pms.domain.request.UserPageRequest;
+import cn.dhbin.isme.pms.domain.request.*;
 import cn.dhbin.isme.pms.service.UserService;
 import cn.hutool.core.convert.NumberWithFormat;
 import io.swagger.v3.oas.annotations.tags.Tag;
@@ -96,7 +91,7 @@ public class UserController {
      */
     @PatchMapping("{id}")
     @Preview
-    public R<Void> update(@PathVariable Long id, @RequestBody UpdateUserRequest request) {
+    public R<Void> update(@PathVariable Long id, @RequestBody AddRoleUsersRequest request) {
         throw new BizException(BizResponseCode.ERR_11006, "接口未实现");
     }
 

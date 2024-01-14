@@ -1,0 +1,11 @@
+spring:
+  datasource:
+    driver-class-name: com.microsoft.sqlserver.jdbc.SQLServerDriver
+    username: sa
+    password: 146-164-156-
+    url: jdbc:sqlserver://localhost:1433;database=javadb;encrypt=false;
+
+  sql:
+    init:
+      schema-locations: classpath:db/oracle.sql
+      #mode: always

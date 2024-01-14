@@ -25,7 +25,7 @@ public class MybatisPlusConfigure {
     @Bean
     public MybatisPlusInterceptor mybatisPlusInterceptor() {
         MybatisPlusInterceptor interceptor = new MybatisPlusInterceptor();
-        interceptor.addInnerInterceptor(new PaginationInnerInterceptor(DbType.ORACLE));//.MYSQL));
+        interceptor.addInnerInterceptor(new PaginationInnerInterceptor(DbType.SQL_SERVER2005));//ORACLE     .MYSQL));
         return interceptor;
     }
 

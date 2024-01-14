@@ -4,9 +4,12 @@ import cn.dev33.satoken.exception.NotLoginException;
 import cn.dev33.satoken.exception.NotRoleException;
 import cn.dhbin.isme.common.response.BizResponseCode;
 import cn.dhbin.isme.common.response.R;
+import io.swagger.v3.oas.annotations.parameters.RequestBody;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.validation.ObjectError;
+import org.springframework.web.bind.MethodArgumentNotValidException;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestControllerAdvice;
@@ -78,5 +81,13 @@ public class ExceptionHandlerConfigure {
         r.setMessage(code.getMsg())
             .setCode(code.getCode());
         return r;
+    }
+
+    @RequestBody
+    @ExceptionHandler
+    public R<String> handle(MethodArgumentNotValidException exception){
+        ObjectError error = exception.getBindingResult().getAllErrors().getFirst();
+        String defaultMessage = error.getDefaultMessage();
+        return R.build(new BizException(BizResponseCode.ERR_400, defaultMessage));
     }
 }
